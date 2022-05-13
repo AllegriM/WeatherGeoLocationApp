@@ -1,0 +1,301 @@
+/* Variables */
+
+:root {
+    /* Colores */
+    --clr-blanco: #FCFCFC;
+    --clr-negro: #0000;
+    --clr-gris: rgba(75, 75, 75);
+    --font-familiy: 'Overpass', sans-serif;
+}
+
+/* Reseteo General */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-familiy);
+    height: 100vh;
+    width: 100%;
+    padding: 1% 0;
+}
+
+/* body::after {
+    content: "";
+    background: url(assets/bg/afternoon-bg.jpg);
+    background-size: cover;
+    background-position: center center;
+    opacity: 0.8;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;   
+} */
+
+.light-bg {
+    background-image: linear-gradient(to bottom, #47BFDF, #4A91FF);
+    transition: background-image 10s ease-out;
+}
+
+.dark-bg {
+    background-image: linear-gradient(to bottom, #0b173f , #060D26) ;
+    transition: background-image 10s ease-out;
+}
+
+/* HEADER */
+
+header {
+    width: 80%;
+    margin: 0 auto;
+}
+
+h1 {
+    color: var(--clr-blanco);
+    text-align: center;
+    padding-bottom: 10px;
+    text-shadow: 1px 1px 2px var(--clr-gris);
+}
+
+.title-desc {
+    color: var(--clr-blanco);
+    text-align: center;
+    padding-bottom: 10px;
+    text-shadow: 1px 1px 2px var(--clr-gris);
+    font-size: 15px;
+}
+
+.buscarCiudad {
+    margin: 0 auto;
+    display: flex;
+    width: 300px;
+}
+
+.buscador {
+    font-size: 1.1rem;
+    height: 40px;
+    width: 150px;
+    flex-grow: 2;
+    border: none;
+    padding: 5px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    font-family: var(--font-familiy);
+    background-color: var(--clr-blanco);
+    font-weight: 900;
+    box-shadow: 1px 1px 2px var(--clr-gris);
+}
+
+.buscador:focus {
+    outline: none;
+    border: none;
+}
+
+.buscarBtn {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    height: 40px;
+    color: var(--clr-gris);
+    background: var(--clr-blanco);
+    border: none;
+    padding: 0 10px;
+    outline: none;
+    box-shadow: 1px 1px 2px var(--clr-gris);
+}
+
+.fa-magnifying-glass{
+    font-size: 1rem;
+}
+
+/* Main  */
+
+main {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    height: calc(100% - 150px);
+    width: 100%;
+}
+
+.mid-icon {
+    width: 80px;
+    height: 80px;
+    /* image-rendering: optimizeQuality; */
+    transform: scale(0.999);
+}
+
+#map {
+    max-width: 850px;
+    width: 100%;
+    height: 350px;
+    box-shadow: 1px 1px 1px var(--clr-gris);
+}
+
+/* Card Main */
+
+.clima-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 250px;
+    width: 300px;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10);
+    border-radius: 14px;
+    color: var(--clr-blanco);
+    padding: 10px 0;
+    box-shadow: 1px 1px 1px var(--clr-gris);
+}
+
+.top-card {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.middle-icon{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.temp-dia {
+    font-size: 5rem;
+    font-weight: 100;
+    text-shadow: 1px 1px 2px var(--clr-gris, 0.1);
+}
+
+.bot-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.left-info {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60px;
+    padding: 8px 0;
+}
+
+.left-info::after {
+    content: "";
+    position: absolute;
+    top: 4px;
+    right: -20px;
+    bottom: 0;
+    height: 70%;
+    width: 1px;
+    background-color: var(--clr-blanco);
+}
+
+.miniIcon {
+    color: white;
+    width: 18px;
+}
+
+.clima-wind,
+.clima-hum {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Dark/Light Toggle */
+
+.switch {
+    display: flex;
+    justify-content: flex-end;
+}
+
+label {
+    margin: 0 0;
+    display: flex;
+    width: 75px;
+    height: 35px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 6px;
+    background: #222;
+    border-radius: 50px;
+    cursor: pointer;
+    position: relative;
+}
+
+label i {
+    font-size: 18px;
+}
+
+label .fa-sun {
+    color: gold;
+    transition: 0.8s;
+}
+
+label .fa-moon {
+    color: white;
+    transition: 0.8s;
+}
+
+label .ball {
+    display: none;
+}
+
+label .fa-sun {
+    opacity: 1;
+}
+
+label .fa-moon {
+    opacity: 1;
+}
+
+
+label .ball {
+    position: absolute;
+    display: block;
+    width: 25px;
+    height: 25px;
+    top: 5px;
+    left: 5px;
+    background: #fff;
+    border-radius: 50%;
+    transition: 0.8s;
+}
+
+label .fa-moon {
+    transform: translateX(43px);
+}
+
+#switch:checked+label .fa-moon {
+    transform: translateX(0);
+}
+
+label {
+    transition: 0.3s;
+}
+
+#switch {
+    display: none;
+}
+
+#switch:checked+label .fa-sun {
+    transform: rotate(160deg);
+}
+
+label .fa-moon {
+    transform: rotate(250deg);
+}
+
+#switch:checked+label .fa-moon {
+    transform: translateX(0), rotate(0);
+}

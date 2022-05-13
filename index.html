@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Importando fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- Link Map -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css' rel='stylesheet' />
+    <!-- Link CSS/JS -->
+    <script src="map.js" defer></script>
+    <script src="switcher.js"defer></script>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>Sunny or Cloudy?</title>
+</head>
+<body class="light-bg">
+    <header>
+        <div>
+            <div class="switch">
+                <input id='switch' type="checkbox"/>
+                <label for='switch' class="isWhite">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                    <span class="ball static"></span>
+                </label>
+            </div>
+        </div>
+        <h1>Pick a location</h1>
+        <p class="title-desc">Type the text area or city you want to know the detailed weather information at this time.</p>
+        <form class="buscarCiudad">
+            <input class="buscador" type="text">
+            <button class="buscarBtn"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+    </header>
+    <main>
+        <div id="map"></div> 
+        <div class="clima-card">
+            <div class="top-card">
+                <p class="dia-actual">Today, 12 September</p>
+                <div class="middle-icon">
+                    <img class="mid-icon" src="icons/day/116.png" alt="">
+                    <h2 class="temp-dia">29°</h2>
+                </div>
+                <p class="clima-desc">Cloudy</p>
+            </div>
+            <div class="bot-card">
+                <div class="clima-wind">
+                    <div class="left-info">
+                        <img class="miniIcon" src="icons/night/wind.png" alt="">  
+                        <p>Wind</p>
+                    </div>
+                    
+                    <p class="vel-wind">10km/h</p>
+                </div>
+                <div class="clima-hum">
+                    <div class="left-info">
+                        <img class="miniIcon" src="icons/night/humidity.png" alt="">                        
+                        <p>Hum</p>
+                    </div>
+                    <p class="per-hum">54%</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer></footer>
+</body>
+</html>
